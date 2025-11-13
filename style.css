@@ -1,0 +1,131 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(#e8eef3, #dbe4ea);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#status {
+    font-size: .95rem;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #444;
+}
+
+.compass-container {
+    position: relative;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.compass-background {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fafafa, #e0e0e0 70%);
+    border: 5px solid #c6c6c6;
+}
+
+.direction {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.n { top: 8px; left: 50%; transform: translateX(-50%); }
+.s { bottom: 8px; left: 50%; transform: translateX(-50%); }
+.e { right: 10px; top: 50%; transform: translateY(-50%); }
+.w { left: 10px; top: 50%; transform: translateY(-50%); }
+
+/* مؤشر القبلة */
+#qiblaMarker {
+    position: absolute;
+    width: 14px;
+    height: 70px;
+    top: 10px;
+    left: 50%;
+    transform-origin: 50% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.q-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 28px 7px 0 7px;
+    border-color: #00796b transparent transparent transparent;
+}
+
+.q-text {
+    margin-top: 3px;
+    font-size: 0.7rem;
+    color: #00796b;
+    font-weight: bold;
+}
+
+/* الإبرة */
+#needle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 95px 7px 0 7px;
+    border-color: #d32f2f transparent transparent transparent;
+    transform-origin: 50% 95px;
+    filter: drop-shadow(0 5px 4px rgba(0,0,0,0.35));
+}
+
+#needle-base {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: #333;
+    border: 3px solid #eee;
+    border-radius: 50%;
+}
+
+#message {
+    font-size: 1rem;
+    font-weight: bold;
+    min-height: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#toggle {
+    padding: 12px 28px;
+    border-radius: 999px;
+    background: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+#toggle:hover {
+    background: #00695c;
+}
+
+#toggle.stopped {
+    background: #9ea3a5;
+}
