@@ -13,11 +13,9 @@ const kaabaLng = 39.8262 * Math.PI / 180;
 let qiblaBearing = null;
 let running = false;
 
-// تحويلات
 function degToRad(d) { return d * Math.PI / 180; }
 function radToDeg(r) { return r * 180 / Math.PI; }
 
-// حساب اتجاه القبلة
 function computeQiblaBearing(latDeg, lngDeg) {
     const lat = degToRad(latDeg);
     const lng = degToRad(lngDeg);
@@ -61,13 +59,9 @@ function handleOrientation(event) {
 
     heading = (heading + 360) % 360;
 
-    // الإبرة تبقى ثابتة
     needle.style.transform = `rotate(0deg)`;
-
-    // الخلفية تتحرك
     compassBackground.style.transform = `rotate(${-heading}deg)`;
 
-    // القبلة تتحرك حسب دوران الهاتف
     qiblaMarker.style.transform =
         `translateX(-50%) rotate(${qiblaBearing - heading}deg)`;
 
@@ -82,7 +76,6 @@ function getLocation() {
         const lng = pos.coords.longitude;
 
         qiblaBearing = computeQiblaBearing(lat, lng);
-
         statusEl.textContent = "تم تحديد اتجاه القبلة.";
 
     }, err => {
