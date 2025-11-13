@@ -258,6 +258,9 @@
 
       // ندوّر وجه البوصلة، الإبرة تبقى ثابتة للأعلى
       compassEl.style.transform = `rotate(${-heading}deg)`;
+      qiblaMarkerEl.style.transform = 
+        `translateX(-50%) rotate(${qiblaBearing + heading}deg)`;
+
 
       updateMessage(heading);
     }
